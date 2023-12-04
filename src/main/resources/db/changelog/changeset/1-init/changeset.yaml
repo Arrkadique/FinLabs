@@ -8,8 +8,8 @@ databaseChangeLog:
             tag: 1-init
         - sqlFile:
             relativeToChangelogFile: true
-            path: 1-init/data/data.sql
+            path: data/data.sql
       rollback:
         - sqlFile:
             relativeToChangelogFile: true
-            path: 1-init/data/rollback.sql
+            path: data/rollback.sql
