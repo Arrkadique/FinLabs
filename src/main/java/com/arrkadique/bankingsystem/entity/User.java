@@ -2,14 +2,16 @@ package com.arrkadique.bankingsystem.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Primary;
+import lombok.*;
 
-@RequiredArgsConstructor
 @Entity
 @Table(name = "users")
-public class Users {
+@AllArgsConstructor
+@RequiredArgsConstructor
+@Builder
+@Getter
+@Setter
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

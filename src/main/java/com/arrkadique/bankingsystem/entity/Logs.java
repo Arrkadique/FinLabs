@@ -1,10 +1,12 @@
 package com.arrkadique.bankingsystem.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Date;
 
+@AllArgsConstructor
 @RequiredArgsConstructor
 @Entity
 @Table(name = "logs")

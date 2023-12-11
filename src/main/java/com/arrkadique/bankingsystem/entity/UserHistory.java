@@ -1,12 +1,10 @@
 package com.arrkadique.bankingsystem.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
+@Entity
 public class UserHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
