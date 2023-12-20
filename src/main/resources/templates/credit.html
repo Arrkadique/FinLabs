@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+</head>
+<body>
+<div id="app">transaction</div>
+<div th:fragment="content">
+    <p>cards</p>
+    <p th:each="card:${cards}">
+        <label for="card_number">number</label>
+        <input id="card_number" th:value="${card.getCardNumber()}"></input>
+        <label for="balance">balance</label>
+        <input id="balance" th:value="${card.getBalance()}"></input>
+    </p>
+    <form method="post">
+        <label for="card">percent</label>
+        <input type="text" id="card" name="card" maxlength="100" required/>
+        <label for="percent">percent</label>
+        <input type="text" id="percent" name="percent" maxlength="100" required/>
+        <label for="date">date</label>
+        <input type="text" id="date" name="date" maxlength="100" required/>
+        <label for="sum">sum</label>
+        <input type="text" id="sum" name="sum" maxlength="100" required/>
+        <div class="form-actions">
+            <button type="submit" class="btn">send</button>
+        </div>
+    </form>
+    <a href="http://localhost:9000/helper">helper</a>
+    <a href="http://localhost:9000/transactions">transactions</a>
+    <a href="http://localhost:9000/home">home</a>
+    <a href="http://localhost:9000/info">info</a>
+    <div class="alert" th:if="${errorMessage}" th:text="${errorMessage}"></div>
+</div>
+</body>
+</html>

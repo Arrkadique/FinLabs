@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+</head>
+<body>
+<div id="app">pls register</div>
+<div th:fragment="content">
+    <form method="post" th:action="@{/registration}">
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" maxlength="100" required/>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" maxlength="100" required/>
+        <label for="lastName">Last name</label>
+        <input type="text" id="lastName" name="lastName" maxlength="100" required/>
+        <label for="phoneNumber">PhoneNumber</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" maxlength="100" required/>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" minlength="6" maxlength="20" required/>
+        <div class="form-actions">
+            <button type="submit" class="btn">reg</button>
+        </div>
+    </form>
+    <a href="http://localhost:9000/login">login</a>
+    <div class="alert" th:if="${errorMessage}" th:text="${errorMessage}"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+</head>
+<body>
+<h1 th:text="${username}"></h1>
+<div id="app">success login </div>
+<form th:action="@{/logout}" method="post">
+    <div>
+        <input type="submit" value="Logout" >
+    </div>
+    <a href="http://localhost:9000/helper">helper</a>
+    <a href="http://localhost:9000/transactions">transactions</a>
+    <a href="http://localhost:9000/credit">credit</a>
+    <a href="http://localhost:9000/info">info</a>
+</form>
+</body>
+</html>

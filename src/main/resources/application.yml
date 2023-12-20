@@ -6,11 +6,22 @@ spring:
     url: jdbc:postgresql://localhost:5432/bankingsystem
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     show-sql: true
   liquibase:
     enabled: true
     change-log: db/changelog/db.changelog-master.yaml
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: arrkadique@gmail.com
+    password: nlzs rbpb zagd arfr
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+          auth: true
 
 app:
   initalDelayInMillis: 3000
@@ -19,3 +30,8 @@ server:
   error:
     include-message: always
     include-exception: true
+  port: 9000
+logging:
+  level:
+    org.springframework.web.servlet.handler.HandlerMappingIntrospector: error
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+</head>
+<body>
+    <p th:text="${username}"></p>
+    <p th:text="${last_name}"></p>
+    <p th:text="${phone_number}"></p>
+    <a href="http://localhost:9000/helper">helper</a>
+    <a href="http://localhost:9000/transactions">transactions</a>
+    <a href="http://localhost:9000/credit">credit</a>
+    <a href="http://localhost:9000/home">home</a>
+
+    <p>cards</p>
+    <p th:each="card:${cards}">
+        <label for="card_number">number</label>
+        <input id="card_number" th:value="${card.getCardNumber()}"></input>
+        <label for="balance">balance</label>
+        <input id="balance" th:value="${card.getBalance()}"></input>
+    </p>
+    <br><br><br>
+    <p>credits</p>
+    <p th:each="cr:${credit}">
+        <label for="credit_month">credit_month</label>
+        <input id="credit_month" th:value="${cr.getMonthPayment()}"></input>
+        <label for="percent">percent</label>
+        <input id="percent" th:value="${cr.getPercent()}">
+        <label for="sum">sum</label>
+        <input id="sum" th:value="${cr.getSum()}">
+        <label for="datecr">date</label>
+        <input id="datecr" th:value="${cr.getDate()}">
+    </p>
+    <br><br><br>
+    <p>create card</p>
+    <form method="post">
+        <label for="number">number</label>
+        <input type="text" id="number" name="number" maxlength="100" required/>
+        <label for="date">date</label>
+        <input type="text" id="date" name="date" maxlength="100" required/>
+        <label for="cvv">cvv</label>
+        <input type="text" id="cvv" name="cvv" maxlength="100" required/>
+        <div class="form-actions">
+            <button type="submit" class="btn">create</button>
+        </div>
+    </form>
+</body>
+</html>
